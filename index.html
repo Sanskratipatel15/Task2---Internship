@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Introduction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-blue-600 text-white py-5">
+        <div class="container mx-auto text-center">
+            <img src="logo.png" alt="Course Logo" class="w-20 mx-auto mb-4">
+            <h1 class="text-4xl font-bold">Learn Coding, Web Development, Databases, AI, and ML</h1>
+            <p class="text-lg mt-2">Join our comprehensive course and become an expert in the latest technologies.</p>
+        </div>
+    </header>
+
+    <section class="courses py-10 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Our Courses</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="download.jpg" class="card-img-top" alt="Web Development">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">Learn HTML, CSS, JavaScript, and modern frameworks like React and Angular.</p>
+                            <button class="btn btn-primary" onclick="showDetails('web-dev')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="AI AND ML.jpg" class="card-img-top" alt="AI and Machine Learning">
+                        <div class="card-body">
+                            <h5 class="card-title">AI and Machine Learning</h5>
+                            <p class="card-text">Master the fundamentals and advanced concepts of AI and ML.</p>
+                            <button class="btn btn-primary" onclick="showDetails('ai-ml')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="Databases.png" class="card-img-top" alt="Databases">
+                        <div class="card-body">
+                            <h5 class="card-title">Databases</h5>
+                            <p class="card-text">Get in-depth knowledge of SQL and NoSQL databases.</p>
+                            <button class="btn btn-primary" onclick="showDetails('databases')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="course-details" class="course-details py-10 bg-white hidden">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6" id="course-title">Course Details</h2>
+            <div id="course-content">
+                <!-- Course details will be dynamically inserted here -->
+            </div>
+            <button class="btn btn-secondary mt-4" onclick="hideDetails()">Back to Courses</button>
+        </div>
+    </section>
+
+    <section class="roadmap py-10 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Course Roadmap</h2>
+            <img src="roadmap.jpg" alt="Course Roadmap" class="mx-auto">
+        </div>
+    </section>
+
+    <section class="timetable py-10 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Timetable</h2>
+            <table class="table mx-auto">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>10:00 AM - 12:00 PM</td>
+                        <td>Web Development</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>2:00 PM - 4:00 PM</td>
+                        <td>AI and ML</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>11:00 AM - 1:00 PM</td>
+                        <td>Databases</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="placement py-10 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Placement Support</h2>
+            <p class="text-lg mb-6">Our courses include comprehensive placement support to help you land your dream job.</p>
+            <ul class="list-disc text-left mx-auto" style="max-width: 600px;">
+                <li>Resume and LinkedIn profile building</li>
+                <li>Mock interviews with industry experts</li>
+                <li>Job referrals and networking opportunities</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta py-10 bg-blue-600 text-white text-center">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Get Started Now!</h2>
+            <p class="text-lg mb-6">Enroll today and take the first step towards mastering coding, web development, databases, AI, and ML.</p>
+            <a href="#" class="btn btn-lg btn-light">Enroll Now</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-5 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Course Introduction. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="chat-widget">
+        <div class="chat-header bg-blue-600 text-white p-3" onclick="toggleChat()">
+            <h5 class="mb-0">Chat with Us</h5>
+        </div>
+        <div id="chat-body" class="chat-body bg-white p-3 hidden">
+            <p>Hello! How can we help you today?</p>
+            <input type="text" class="form-control" placeholder="Type your message...">
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
